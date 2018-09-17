@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour {
 	public int speed;
 	
 	// Private Members
-	private RigidBody rb;
+	private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {

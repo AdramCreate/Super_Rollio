@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour {
 
 	// Best update to call after all physics calculations are done
 	void LateUpdate(){
-		transform.position = target.transform.position - offset;
+		//transform.position = target.transform.position - offset;
 		transform.LookAt(target.transform);
 	}
 }
