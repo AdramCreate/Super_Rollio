@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2015244, g: 0.17589697, b: 0.12862861, a: 1}
+  m_IndirectSpecularColor: {r: 0.076960094, g: 0.07165291, b: 0.055355623, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -257,13 +257,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170076733}
-  m_LocalRotation: {x: 0.8664464, y: 0.4944614, z: 0.044144124, w: -0.053196743}
+  m_LocalRotation: {x: 0.12331421, y: 0.036742277, z: -0.21960999, w: -0.9670652}
   m_LocalPosition: {x: 0, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -7.807, y: 538.61804, z: -239.331}
+  m_LocalEulerAnglesHint: {x: -12.848001, y: 352.62, z: -333.579}
 --- !u!1 &183850154
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,11 +483,6 @@ Prefab:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1424209393}
-    - target: {fileID: 114672278756543864, guid: ecba3c64cdadc8c4c94a974e5b446c4b,
-        type: 2}
-      propertyPath: EnemySpawner
-      value: 
-      objectReference: {fileID: 1607441586}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecba3c64cdadc8c4c94a974e5b446c4b, type: 2}
   m_IsPrefabAsset: 0
@@ -737,7 +732,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Controls: WASD/Arrow Keys = Movement, R = Reset Game, Esc = Exit Game'
+  m_Text: 'Controls: WASD/Arrow Keys = Movement, LMB + Direction = Shoot, R = Reset
+    Game, Esc = Exit Game'
 --- !u!222 &1236703961
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -900,7 +896,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00
+  m_Text: Score = 00
 --- !u!222 &1424209394
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1242,7 +1238,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Health Points
+  m_Text: 'HP: 0'
 --- !u!222 &1954921875
 CanvasRenderer:
   m_ObjectHideFlags: 0

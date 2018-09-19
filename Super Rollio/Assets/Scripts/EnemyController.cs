@@ -7,12 +7,14 @@ public class EnemyController : MonoBehaviour {
     // Public Members
     public int hp;
     public GameObject playerTarget;
+    public int moveSpeed;
 
     // Private Members
 
 	// Use this for initialization
 	void Start () {
         playerTarget = GameObject.FindGameObjectWithTag("Player");
+        Physics.IgnoreLayerCollision(9, 9);
 	}
 	
     private void OnCollisionEnter(Collision collision)
@@ -24,6 +26,18 @@ public class EnemyController : MonoBehaviour {
             { 
                 Destroy(gameObject);
             }
+        }
+    }
+    private void Update()
+    {
+        if(playerTarget != null)
+        {
+            transform.LookAt(playerTarget.transform.position);
+            transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        }
+        else
+        {
+            Destroy(gameObject, 2.0f);
         }
     }
 
