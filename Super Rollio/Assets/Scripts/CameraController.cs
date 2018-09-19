@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class CameraController : MonoBehaviour {
 	// Public Members
@@ -19,11 +21,14 @@ public class CameraController : MonoBehaviour {
 
 	// Best update to call after all physics calculations are done
 	void LateUpdate(){
-		transform.position = target.transform.position - offset;
-		transform.LookAt(target.transform);
+        if (target != null)
+        {
+            transform.position = target.transform.position - offset;
+            transform.LookAt(target.transform);
+        }
 	}
 
-    public void Update()
+    void Update()
     {
         if (Input.GetKey(KeyCode.R))
         {

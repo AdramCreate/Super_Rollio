@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour {
     public int hp;
     public GameObject playerTarget;
     public int moveSpeed;
+    public AudioClip deathSound;
 
     // Private Members
 
@@ -21,11 +22,7 @@ public class EnemyController : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            hp -= 1;
-            if (hp == 0)
-            { 
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
     private void Update()
@@ -34,10 +31,6 @@ public class EnemyController : MonoBehaviour {
         {
             transform.LookAt(playerTarget.transform.position);
             transform.position += transform.forward * moveSpeed * Time.deltaTime;
-        }
-        else
-        {
-            Destroy(gameObject, 2.0f);
         }
     }
 
@@ -54,6 +47,7 @@ public class EnemyController : MonoBehaviour {
             }
             if (hp == 0)
             {
+                AudioSource.PlayClipAtPoint(deathSound, transform.position);
                 Destroy(gameObject);
             }
         }

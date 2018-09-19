@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
     public int score;
     public Text healthText;
     public Text scoreText;
+    public AudioClip deathSound;
+    public AudioClip damageSound;
 
 	// Private Members
 	private Rigidbody rb;
@@ -42,19 +44,27 @@ public class PlayerController : MonoBehaviour {
             SetHealthText();
             if(hp == 0)
             {
+                AudioSource.PlayClipAtPoint(deathSound, transform.position);
                 Destroy(gameObject);
+            }
+            else
+            {
+                AudioSource.PlayClipAtPoint(damageSound, transform.position);
             }
         }
     }
 
     public void SetHealthText()
     {
-        healthText.text = "HP: " + hp;
+        healthText.text = "HP: ";
+        for(int i = 0; i < hp; i++)
+        {
+            healthText.text += "@ ";
+        }
     }
 
     public void SetScoreText()
     {
-        if(score < 100)
-            scoreText.text = "Score: " + score.ToString("D2");
+        scoreText.text = "Score: " + score.ToString("D4");
     }
 }

@@ -19,7 +19,8 @@ public class AttackController : MonoBehaviour {
         if (target.gameObject != null)
         {
             transform.position = target.transform.position;
-            if (Input.GetMouseButtonDown(0))
+            //if (Input.GetMouseButtonDown(0))
+            if(Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
             {
                 Fire();
             }

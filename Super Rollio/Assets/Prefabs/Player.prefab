@@ -117,6 +117,8 @@ MonoBehaviour:
   score: 0
   healthText: {fileID: 0}
   scoreText: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: c591ab298ab777b4aa7711d911467ce2, type: 3}
+  damageSound: {fileID: 8300000, guid: eb0ac64aa52643a45bb83913888e5f89, type: 3}
 --- !u!135 &135500372032463056
 SphereCollider:
   m_ObjectHideFlags: 1

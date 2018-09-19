@@ -126,4 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   playerTarget: {fileID: 0}
-  moveSpeed: 12
+  moveSpeed: 19
+  deathSound: {fileID: 8300000, guid: 10e426ab0998a6d4b945045f8ef52201, type: 3}
