@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 	// Public Members
@@ -13,17 +14,26 @@ public class PlayerController : MonoBehaviour {
 
 	// Private Members
 	private Rigidbody rb;
-   
+    private string currSceneName;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
         SetHealthText();
         SetScoreText();
+        currSceneName = SceneManager.GetActiveScene().name;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(currSceneName);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 	}
 
 	// For physics calculations
@@ -54,6 +64,7 @@ public class PlayerController : MonoBehaviour {
 
     public void SetScoreText()
     {
-        scoreText.text = score.ToString("D2");
+        if(score < 100)
+            scoreText.text = "Score: " + score.ToString("D2");
     }
 }

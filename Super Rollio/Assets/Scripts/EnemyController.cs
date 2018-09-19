@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour {
     // Public Members
     public int hp;
     public GameObject playerTarget;
+
     // Private Members
 
 	// Use this for initialization
@@ -14,24 +15,31 @@ public class EnemyController : MonoBehaviour {
         playerTarget = GameObject.FindGameObjectWithTag("Player");
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Stage"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             hp -= 1;
             if (hp == 0)
+            { 
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            hp -= 1;
+            if (playerTarget != null)
             {
-                if (collision.gameObject.CompareTag("bullet"))
-                {
-                    PlayerController playerScript = playerTarget.GetComponent<PlayerController>();
-                    playerScript.score += 1;
-                    playerScript.SetScoreText();
-                }
+                PlayerController playerScript = playerTarget.GetComponent<PlayerController>();
+                playerScript.score += 1;
+                playerScript.SetScoreText();
+            }
+            if (hp == 0)
+            {
                 Destroy(gameObject);
             }
         }

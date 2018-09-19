@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackController : MonoBehaviour {
+    // Public Variables
     public GameObject target;
     public GameObject bulletPrefab;
     public Camera myCamera;
@@ -12,20 +13,10 @@ public class AttackController : MonoBehaviour {
 	void Start () {
         transform.position = target.transform.position;
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
-
-    private void FixedUpdate()
-    {
-
-    }
 
     void LateUpdate()
     {
-        if (target.gameObject.activeInHierarchy)
+        if (target.gameObject != null)
         {
             transform.position = target.transform.position;
             if (Input.GetMouseButtonDown(0))

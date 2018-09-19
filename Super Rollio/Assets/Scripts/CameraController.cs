@@ -13,11 +13,6 @@ public class CameraController : MonoBehaviour {
 	void Start () {
 		offset = target.transform.position - transform.position;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 	// Best update to call after all physics calculations are done
 	void LateUpdate(){
